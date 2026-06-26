@@ -7,6 +7,7 @@ class Post(models.Model):
     content = models.TextField()
     # Поле для даты создания — автоматически заполняется текущей датой
     created_at = models.DateTimeField(auto_now_add=True)
+    likes = models.IntegerField(default=0)
 
     # Это метод для красивого отображения поста в админке
     def __str__(self):

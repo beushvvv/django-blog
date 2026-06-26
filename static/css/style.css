@@ -20,3 +20,20 @@ h1 {
 .post h2 {
     margin-top: 0;
 }
+
+.like-btn {
+    background: none;
+    border: 2px solid #e94560;
+    color: #e94560;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px 0;
+}
+
+.like-btn:hover {
+    background: #e94560;
+    color: white;
+}

@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }} — Мой блог</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <article class="post">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <small>Создано: {{ post.created_at }}</small>
+    </article>
+	
+    <!-- ❤️ Количество лайков -->
+    <p>❤️ {{ post.likes }} лайков</p>
+    
+    <!-- Кнопка лайка -->
+    <form method="POST" action="{% url 'like_post' post.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="like-btn">❤️ Лайкнуть</button>
+    </form>
+	
+	<p><a href="{% url 'home' %}">← Все посты</a></p>
+</body>
+</html>

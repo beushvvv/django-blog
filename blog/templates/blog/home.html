@@ -10,12 +10,11 @@
     <h1>Все посты</h1>
 
     {% for post in posts %}
-        <div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
+        <div class="post">
+            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.content|truncatewords:30 }}</p>
             <small>Создано: {{ post.created_at }}</small>
         </div>
-        <hr>
     {% empty %}
         <p>Нет постов :(</p>
     {% endfor %}
